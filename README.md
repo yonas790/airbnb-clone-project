@@ -169,3 +169,72 @@ Stores payment transaction data.
 - **Payment Processing:** Integrate a payment system to handle transactions and record payment details.
 - **Review System:** Allow users to leave reviews and ratings for properties.
 - **Data Optimization:** Ensure efficient data retrieval and storage through database optimizations.
+
+
+## 🔐 API Security
+
+Securing the API is essential to protect user data, prevent unauthorized access, and ensure the reliability of the platform. Below are the key security measures implemented in this project:
+
+### ✅ Authentication
+We use **JWT (JSON Web Tokens)** for secure and stateless authentication.  
+Users receive a token upon login which must be included in all protected API requests (usually in the `Authorization` header).
+
+- 🔒 **Why it's important**: Prevents unauthorized access and ensures that only verified users can interact with protected endpoints (e.g., bookings, reviews, property management).
+
+---
+
+### 🛡️ Authorization
+Role-Based Access Control (RBAC) defines user permissions (e.g., guest, host, admin).  
+Sensitive actions like modifying property listings or processing payments are restricted to appropriate roles.
+
+- 🔒 **Why it's important**: Protects data integrity by ensuring that users can only access resources they own or have permission for.
+
+---
+
+### ⏱️ Rate Limiting
+We implement request throttling using tools like **Django Ratelimit** or **Redis** to limit the number of requests a user or IP can make in a given time window.
+
+- 🔒 **Why it's important**: Prevents brute-force login attempts, abuse of endpoints, and denial-of-service (DoS) attacks.
+
+---
+
+### 🧹 Input Validation & Sanitization
+All inputs are validated using Django REST Framework (DRF) serializers and custom validators.  
+We ensure all data is cleaned and expected before being processed or stored.
+
+- 🔒 **Why it's important**: Mitigates the risk of **SQL injection**, **XSS (Cross-Site Scripting)**, and other input-based attacks.
+
+---
+
+### 🌐 HTTPS & Secure Headers
+The application enforces HTTPS in production. Additionally, we use security headers like:
+- `Strict-Transport-Security`
+- `X-Content-Type-Options`
+- `X-Frame-Options`
+- `Content-Security-Policy`
+
+- 🔒 **Why it's important**: Ensures encrypted communication between client and server, protecting sensitive data from interception or tampering.
+
+---
+
+### 💳 Payment Security
+We never store payment details directly. Instead, we integrate secure third-party providers (e.g., Stripe or Chapa) that comply with **PCI-DSS** standards.
+
+- 🔒 **Why it's important**: Secures users’ financial information and ensures trustworthiness in the payment process.
+
+---
+
+### 🧠 Security Summary Table
+
+| Security Area        | Description                                               | Purpose                                                  |
+|----------------------|-----------------------------------------------------------|-----------------------------------------------------------|
+| Authentication       | JWT-based login token                                     | Secure user identification                                |
+| Authorization        | Role-based access control                                 | Protect restricted operations                             |
+| Rate Limiting        | IP/user-level throttling via Django/Redis                | Prevent brute-force & abuse                              |
+| Input Validation     | Data sanitation & field validation with DRF               | Prevent injection/XSS attacks                            |
+| HTTPS & Headers      | TLS encryption & secure HTTP headers                      | Secure client-server communication                        |
+| Payment Security     | External PCI-compliant gateway integration                | Protect financial transactions                           |
+
+---
+
+
