@@ -161,3 +161,11 @@ Stores payment transaction data.
 - **Property ↔ Bookings**: One-to-Many (Property can be booked many times)  
 - **Property ↔ Reviews**: One-to-Many (Property can have many reviews)  
 - **Booking ↔ Payments**: One-to-One (Each booking has a single payment)
+
+## Feature Breakdown
+- **User Management:** Implement a secure system for user registration, authentication, and profile management.
+- **Property Management:** Develop features for property listing creation, updates, and retrieval.
+- **Booking System:** Create a booking mechanism for users to reserve properties and manage booking details.
+- **Payment Processing:** Integrate a payment system to handle transactions and record payment details.
+- **Review System:** Allow users to leave reviews and ratings for properties.
+- **Data Optimization:** Ensure efficient data retrieval and storage through database optimizations.
