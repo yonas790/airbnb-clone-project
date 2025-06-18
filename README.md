@@ -237,4 +237,23 @@ We never store payment details directly. Instead, we integrate secure third-part
 
 ---
 
+## 🔄 CI/CD Pipeline
 
+### 📌 What is CI/CD?
+
+**CI/CD** stands for **Continuous Integration** and **Continuous Deployment/Delivery**.  
+It is a set of practices that automate the process of building, testing, and deploying applications.  
+CI/CD pipelines allow developers to deliver updates faster, more frequently, and with greater confidence.
+
+- **Continuous Integration** ensures that every code change is automatically tested and merged smoothly into the main branch.
+- **Continuous Deployment** ensures that validated changes are automatically deployed to production (or staging) environments without manual intervention.
+
+---
+
+### 🚀 Why CI/CD Is Important for This Project
+
+- ✅ **Automated Testing**: Prevents bugs and regressions by running tests on every commit or pull request.
+- ✅ **Faster Delivery**: Reduces manual effort in deploying new features or fixes.
+- ✅ **Team Collaboration**: Makes it easier for multiple developers to work on the project simultaneously without conflicts.
+- ✅ **Reliability**: Reduces human error by automating the build and deployment steps.
+- ✅ **Scalability**: Makes it easier to scale and deploy changes consistently across environments.
